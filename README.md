@@ -8,6 +8,9 @@ Predicting Invasive Ductal Carcinoma in Tissue Slices using two pre-trained conv
 *Fall 2022*
 *Dec 13, 2022*
 
+
+<img src="Image/Tissue.png">
+
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Description of Dataset](#description-of-dataset)
@@ -56,17 +59,85 @@ on Resnet18 with CLR search.
 ## Description of Dataset
 The dataset used in this project is sourced from Kaggle and contains 162 whole mount slide images of Breast Cancer (BCa) specimens scanned at 40x. From these slides, 277,524 patches of size 50x50 were extracted, consisting of 198,738 IDC-negative patches and 78,786 IDC-positive patches.
 
+# Exploratory data analysis
+<img src="Image/EDA.png">
+
 ## Description of the Model and Algorithm
 - Convolutional Neural Network (CNN): Two pre-trained CNN models, VGG16 and ResNet18, were used for the classification task. CNNs are deep learning algorithms that assign importance to various aspects of an image to differentiate between classes.
+
+ <img src="Image/VGG.png">
+
+ 
 - Transfer Learning: Pre-trained models from ImageNet were used to leverage their learned features and adapt them to the IDC classification task.
 - Cyclical Learning Rates (CLR): A learning rate search method was used during the training process to optimize the learning rate between specified boundaries, resulting in improved convergence and stability.
+
+<img src="Image/CLR.png">
+
+
 - General Adversarial Network (GAN): A cGAN (conditional GAN) was implemented for data augmentation and color normalization to increase the diversity of images and improve model performance.
+
 
 ## Experimental Setup
 Data preprocessing, exploratory data analysis, train-validation-test split, data augmentation, and metric selection were performed to prepare the data and set up the evaluation process.
 
+# Data Augmentation
+
+<img src="Image/Data_Aug.png">
+
+Image diversity increase
+
+In this project, we did two parts of methods for data augmentation on the train set to avoid 
+overfitting and improve the performance. Our dataset is H&E stained Tissue slice dataset. First 
+method is increasing image diversity. Second is the standardizing of the color of images, called 
+color normalization. In this project, we implemented ‘imguag’ and ‘skimage’. Figure X, is the 
+original image. We used several methods to transform images. The examples are shown below.
+
+
+
+# Train
+
+<img src="Image/Train.png">
+
+| Parameter    | Value  | 
+|----------|------|
+| Epoch | 30  | 
+| Batch Size | 32   | 
+| Learning Rate    | max_lr = 0.06， min_lr = 1e-6  |
+| Optimizer    | SGD   | 
+| Criterion    | CrossEntropyLoss(weighted) | 
+| Evaluation Metrics     | F1-Score   | 
+
+
 ## Results & Summary
+
+# Model Performance
+
+| Model    | CRL  | Validation Accuracy | Training Time |
+|----------|------|---------------------|---------------|
+| ResNet18 | Yes  | 0.85%              | 265m51s       |
+| ResNet18 | No   | 0.77%              | 270m41s       |
+| VGG16    | Yes  | 0.79%              | 390m44s       |
+| VGG16    | No   | 0.73%              | 393m43s       |
+
+# CLR-True
+
+<img src="Image/CLR-True.png">
+
+# CLR-Fasle
+
+<img src="Image/CLR-Fasle.png">
+
+
 ResNet18 outperformed VGG16 in terms of accuracy and training time. The use of Cyclical Learning Rates (CLR) improved the stability and convergence speed of both models.
+
+ResNet18 has 25.5 million parameters and VGG16 has around 138 million 
+parameters. However, the number of parameters is not the factor that influences the training speed. 
+The architecture is. ResNet18 has a large kernel size 7 * 7 at the beginning, it helped to reduce 
+the image size to half. Compared with VGG16, the kernel size is 3*3 at the first layer. Therefore, 
+it would be more computationally expensive than ResNet18. ResNet18 follows the rule that is 
+much thinner and much deeper in the architecture of the network.Cyclic learning rate method 
+helped to improve the accuracy on the validation set and converged faster both on VGG16 and 
+ResNet18. With the Cyclic learning rate method, the training process was more stable. 
 
 ## Future Work
 Potential future work includes generating color-normalized images using Pix2Pix network and incorporating them into the training set to further improve model performance.
