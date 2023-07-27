@@ -55,32 +55,50 @@ Potential future work includes generating color-normalized images using Pix2Pix 
 ## References
 The report includes a list of references used for the project, covering various sources related to convolutional neural networks, datasets, transfer learning, and GANs.
 
+1. [Convolutional neural networks: an overview and application in radiology](https://link.springer.com/article/10.1007/s13244-018-0639-9) | Insights into Imaging
+2. [Breast Cancer Notebook: Breast Cancer](https://www.kaggle.com/paultimothymooney/breast-histopathology-images) | Kaggle
+3. [Breast Histopathology Images](https://www.kaggle.com/paultimothymooney/breast-histopathology-images) | Kaggle
+4. [ResNet and VGG: Why is resnet faster than vgg](https://stats.stackexchange.com/questions/364882/why-is-resnet-faster-than-vgg) | Cross Validated
+5. [Cyclic Learning rate: Super Convergence with Cyclical Learning Rates in TensorFlow](https://towardsdatascience.com/super-convergence-with-cyclical-learning-rates-in-tensorflow-d8a245fd8a4) | by Christopher Thomas BSc Hons. MIAP | Towards Data Science
+6. Ibraham, Kandel., Mauro, Castelli., (2020). [The effect of batch size on the generalizability of the convolutional neural networks on a histopathology dataset](https://www.sciencedirect.com/science/article/pii/S2213158220302296). Volume 6, Issue 4, Science Direct.
+7. Cruz-Roa, A., Basavanhally, A., González, F., Gilmore, H., Feldman, M., Ganesan, S., Shih, N., Tomaszewski, J., & Madabhushi, A. (2014). [Automatic detection of invasive ductal carcinoma in whole slide images with convolutional neural networks](https://doi.org/10.1117/12.2043872). SPIE Proceedings.
+8. [Pix2Pix Kaggle: Stain Transfer w/ Pix2Pix; PyTorch/Lightning](https://www.kaggle.com/mrgravelord/colored-and-stained-histology-mnist) | Kaggle
+9. Salehi, P., & Chalechale, A. (2020). [Pix2Pix-based stain-to-stain translation: A solution for robust stain normalization in histopathology images analysis](https://doi.org/10.1109/mvip49855.2020.911689). 2020 International Conference on Machine Vision and Image Processing (MVIP).
+
+
 
 
 ## Getting Started
 
  To get started, you will need to install the following dependencies:
-
+ 
+```
  Python 3.6+
  PyTorch# Torchvision
  NumPy
  Scikit-learn
+```
 
 # Once you have installed the dependencies, you can clone the repository and run the following command to install the project dependencies:
 
- pip install -r requirements.txt
+```commandline
+  pip install -r requirements.txt
+```
 
 ## Usage
 
  To train the models, you can run the following command:
-
+```commandline
  python train.py
+```
 
  This will train the models and save the trained models to the `models` directory.
 
  To evaluate the models, you can run the following command:
 
- python evaluate.py
+```commandline
+  python evaluate.py
+```
 
  This will evaluate the models on the test set and print the accuracy.
 
