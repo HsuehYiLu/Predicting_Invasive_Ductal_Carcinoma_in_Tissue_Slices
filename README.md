@@ -170,7 +170,7 @@ The report includes a list of references used for the project, covering various 
  Scikit-learn
 ```
 
-# Once you have installed the dependencies, you can clone the repository and run the following command to install the project dependencies:
+## Once you have installed the dependencies, you can clone the repository and run the following command to install the project dependencies:
 
 ```commandline
   pip install -r requirements.txt
