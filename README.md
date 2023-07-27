@@ -32,7 +32,26 @@ Predicting Invasive Ductal Carcinoma in Tissue Slices using two pre-trained conv
 7. [References](#references)
 
 ## Introduction
-Invasive ductal carcinoma (IDC) is one of the most common types of breast cancer. Detecting IDC in tissue slice images is currently a manual and time-consuming process performed by pathologists. Deep learning techniques, such as Convolutional Neural Networks (CNNs), can potentially aid in automating this process and speed up diagnosis.
+Introduction
+Invasive ductal carcinoma (IDC) is one of the most common types of breast cancer. It's malicious 
+and able to form metastases which makes it especially dangerous. Often a biopsy is done to remove 
+small tissue samples. Then a pathologist has to decide whether a patient has IDC, another type of 
+breast cancer or is healthy. In addition sick cells need to be located to find out how advanced the 
+disease is and which grade should be assigned. This has to be done manually and is a time 
+consuming process. Furthermore the decision depends on the expertise of the pathologist and his 
+or her equipment. Therefore deep learning could be of great help to automatically detect and locate 
+tumor tissue cells and to speed up the process. In order to exploit the full potential one could build 
+a pipeline using massive amounts of tissue image data of various hospitals that were evaluated by 
+different experts. This way one would be able to overcome the dependence on the pathologist 
+which would be especially useful in regions where no experts are available.
+In the project, we used two pre-trained convolutional neural networks to detect IDC in the tissue 
+slice images. In order to avoid the overfitting issue and improve the model performance, we 
+implemented two methods. One is data augmentation method and the other is learning rate search 
+method. In the data augmentation, methods in the transformer were used to increase the diversity
+of the images and a general adversarial network was implemented to standardize the image. In the 
+training process, the cyclical learning rate (CLR) search method was used when training the 
+Resnet18 and the VGG16 framework. The best performance is the accuracy 0.85 on the test set 
+on Resnet18 with CLR search. 
 
 ## Description of Dataset
 The dataset used in this project is sourced from Kaggle and contains 162 whole mount slide images of Breast Cancer (BCa) specimens scanned at 40x. From these slides, 277,524 patches of size 50x50 were extracted, consisting of 198,738 IDC-negative patches and 78,786 IDC-positive patches.
