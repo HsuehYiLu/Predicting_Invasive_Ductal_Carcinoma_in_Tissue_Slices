@@ -115,10 +115,10 @@ original image. We used several methods to transform images. The examples are sh
 
 | Model    | CRL  | Validation Accuracy | Training Time |
 |----------|------|---------------------|---------------|
-| ResNet18 | Yes  | 0.85%              | 265m51s       |
-| ResNet18 | No   | 0.77%              | 270m41s       |
-| VGG16    | Yes  | 0.79%              | 390m44s       |
-| VGG16    | No   | 0.73%              | 393m43s       |
+| ResNet18 | Yes  | 85%              | 265m51s       |
+| ResNet18 | No   | 77%              | 270m41s       |
+| VGG16    | Yes  | 79%              | 390m44s       |
+| VGG16    | No   | 73%              | 393m43s       |
 
 # CLR-True
 
