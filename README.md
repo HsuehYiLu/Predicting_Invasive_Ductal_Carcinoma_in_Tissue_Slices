@@ -47,6 +47,7 @@ tumor tissue cells and to speed up the process. In order to exploit the full pot
 a pipeline using massive amounts of tissue image data of various hospitals that were evaluated by 
 different experts. This way one would be able to overcome the dependence on the pathologist 
 which would be especially useful in regions where no experts are available.
+
 In the project, we used two pre-trained convolutional neural networks to detect IDC in the tissue 
 slice images. In order to avoid the overfitting issue and improve the model performance, we 
 implemented two methods. One is data augmentation method and the other is learning rate search 
@@ -123,9 +124,9 @@ original image. We used several methods to transform images. The examples are sh
 
 <img src="Image/CLR-True.png">
 
-# CLR-Fasle
+# CLR-False
 
-<img src="Image/CLR-Fasle.png">
+<img src="Image/CLR-False.png">
 
 
 ResNet18 outperformed VGG16 in terms of accuracy and training time. The use of Cyclical Learning Rates (CLR) improved the stability and convergence speed of both models.
